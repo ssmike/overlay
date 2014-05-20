@@ -20,7 +20,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="dev-python/python-distutils-extra
-dev-python/imaging
+virtual/python-imaging
 dev-python/dbus-python
 sys-power/upower
 x11-libs/cairo
