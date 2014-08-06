@@ -12,7 +12,7 @@ SRC_URI="http://switch.dl.sourceforge.net/project/openpref/OpenPref-Qt4/openpref
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="x86 amd64"
 IUSE=""
 
 DEPEND="dev-qt/qtcore"

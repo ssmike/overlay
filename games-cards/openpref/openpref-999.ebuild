@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://gitorious.org/openprefqt4/annulens-clone.git"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="dev-qt/qtcore"
