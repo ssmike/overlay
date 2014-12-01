@@ -7,7 +7,7 @@ INT_VERSION=""
 
 DESCRIPTION="Free mathematics software for learning and teaching GeoGebra is free dynamic mathematics software for all levels of education that joins geometry, algebra, graphing, and calculus in one easy-to-use package."
 HOMEPAGE="http://www.geogebra.org/"
-SRC_URI="$(curl -I http://www.geogebra.org/installers/rpm.php | sed -n "/^Location/p"| sed -e "s/^Location: //g")"
+SRC_URI="http://www.geogebra.net/linux/rpm/i386/geogebra5-5.0.19.0-37093.i386.rpm"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -21,9 +21,9 @@ inherit rpm
 
 src_unpack() {
 	rpm_unpack
-    mkdir "${WORKDIR}/geogebra-999"
-	cp -r -p ${WORKDIR}/* ${WORKDIR}/geogebra-999
-	rm -r ${WORKDIR}/geogebra-999/geogebra-999
+    mkdir "${WORKDIR}/geogebra-5"
+	cp -r -p ${WORKDIR}/* ${WORKDIR}/geogebra-5
+	rm -r ${WORKDIR}/geogebra-999/geogebra-5
 }
 
 
