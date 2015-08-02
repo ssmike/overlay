@@ -26,7 +26,6 @@ RDEPEND="
 	dev-libs/libunique:3
 	>=net-libs/libsoup-2.34
 	x11-libs/gdk-pixbuf[jpeg]
-	dev-lang/python:2.7
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)
@@ -41,31 +40,22 @@ src_prepare() {
 	bzr_src_prepare
 
 	# 0 fails the test in configure, so it fails if the code isnt under bzr
-	cd ${WORKDIR}/${PF}
-	sed -i 's#revision = 0#revision = "0"#' waf_nuvolaextras.py || die
+	#sed -i 's#revision = 0#revision = "0"#' waflib/nuvolaextras.py || die
 
 	# Fix build failure by using our own vapi file... I know
-	#cp "${FILESDIR}/libnotify.vapi" "${S}/vapi" || die
+	cp "${FILESDIR}/libnotify.vapi" "${S}/vapi" || die
 
 	vala_src_prepare --ignore-use
 }
 
 src_configure() {
-	cd ${WORKDIR}/${PF}
-	python2 ./waf configure \
-		--no-svg-optimization \
-		--no-unity-quick-list \
-		--with-gstreamer=1.0 || die
+	waf-utils_src_configure \
+#		--no-unity-quick-list \
+		--with-gstreamer=1.0
 }
 
 src_compile() {
-	cd ${WORKDIR}/${PF}
-	python2 ./waf build --skip-tests || die
-}
-
-src_install() {
-	cd ${WORKDIR}/${PF}
-	python2 ./waf install --destdir="${D}" || die
+	waf-utils_src_install --skip-tests
 }
 
 pkg_postinst() {
