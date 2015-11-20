@@ -13,10 +13,11 @@ EBZR_REPO_URI="lp:nuvola-player"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="debug"
 
 RDEPEND="
+	media-sound/diorite
 	x11-libs/gtk+:3
 	dev-libs/libgee:0
 	dev-libs/json-glib
@@ -38,24 +39,22 @@ src_unpack() {
 
 src_prepare() {
 	bzr_src_prepare
-
-	# 0 fails the test in configure, so it fails if the code isnt under bzr
-	#sed -i 's#revision = 0#revision = "0"#' waflib/nuvolaextras.py || die
-
-	# Fix build failure by using our own vapi file... I know
-	cp "${FILESDIR}/libnotify.vapi" "${S}/vapi" || die
-
 	vala_src_prepare --ignore-use
 }
 
 src_configure() {
-	waf-utils_src_configure \
-#		--no-unity-quick-list \
-		--with-gstreamer=1.0
+	waf-utils_src_configure
 }
 
 src_compile() {
-	waf-utils_src_install --skip-tests
+	cd ${S}
+	./waf build
+	#waf-utils_src_install --skip-tests --no-system-hooks
+}
+
+src_install() {
+	cd ${S}
+	./waf install --destdir="../../image" --no-system-hooks 
 }
 
 pkg_postinst() {
