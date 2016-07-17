@@ -49,7 +49,7 @@ src_compile() {
 
 src_install() {
 	cd ${S}
-	./waf install --destdir="${D}" --no-ldconfig 
+	./waf install --destdir="${D}" --no-system-hooks
 }
 
 pkg_postinst() {
