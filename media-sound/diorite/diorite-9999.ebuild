@@ -4,7 +4,11 @@
 
 EAPI=5
 
-inherit git-2 vala waf-utils
+
+PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_REQ_USE='threads(+)'
+
+inherit git-r3 vala waf-utils python-any-r1
 
 DESCRIPTION="tiliado gui library"
 HOMEPAGE="https://tiliado.eu/diorite/"
@@ -21,7 +25,9 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	$(vala_depend)
 	dev-util/intltool
-	dev-lang/python:2
 "
 
-PYTHON_COMPAT=( python2_7 )
+src_install() {
+	cd "${S}"
+	./waf --destdir="${D}" install --no-ldconfig
+}

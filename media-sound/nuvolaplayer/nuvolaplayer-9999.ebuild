@@ -4,12 +4,16 @@
 
 EAPI=5
 
-inherit bzr gnome2-utils vala waf-utils
+PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_REQ_USE='threads(+)'
+
+inherit  gnome2-utils vala waf-utils python-any-r1 git-r3
 
 DESCRIPTION="Cloud music integration for your Linux desktop"
 HOMEPAGE="https://launchpad.net/nuvola-player"
 
-EBZR_REPO_URI="lp:nuvola-player"
+EGIT_REPO_URI="https://github.com/tiliado/nuvolaplayer.git"
+#EGIT_BRANCH="3.0.x"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -33,17 +37,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 "
 
-src_unpack() {
-	bzr_src_unpack
-}
-
 src_prepare() {
-	bzr_src_prepare
 	vala_src_prepare --ignore-use
-}
-
-src_configure() {
-	waf-utils_src_configure
 }
 
 src_compile() {
@@ -54,7 +49,7 @@ src_compile() {
 
 src_install() {
 	cd ${S}
-	./waf install --destdir="../../image" --no-system-hooks 
+	./waf install --destdir="${D}" --no-ldconfig 
 }
 
 pkg_postinst() {
