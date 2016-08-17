@@ -24,5 +24,5 @@ src_install() {
 	doins 51-android.rules
 
 	into /
-	dodoc README
+	dodoc README.md
 }
