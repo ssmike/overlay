@@ -29,9 +29,9 @@ src_configure() {
 	CMAKE_BUILD_TYPE="release"
 	glib_path="/usr/include/"$(ls /usr/include/ | sed -n "/^glib-/p")
 	local mycmakeargs=(-DCMAKE_INSTALL_PREFIX=/usr -DEO_SOURCE_DIR:PATH=$glib_path)
-	append-cxxflags -I$glib_path
+	append-cxxflags -I$glib_path -std=c++11
 	append-cflags -I$glib_path
-	append-cppflags -I$glib_path
+	#append-cppflags -I$glib_path -std=c++11
 	cmake-utils_src_configure
 }
 
