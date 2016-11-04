@@ -31,6 +31,7 @@ RDEPEND="
 	dev-libs/libunique:3
 	>=net-libs/libsoup-2.34
 	x11-libs/gdk-pixbuf[jpeg]
+	app-crypt/libsecret[vala]
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)
@@ -43,7 +44,7 @@ src_prepare() {
 
 src_compile() {
 	cd ${S}
-	./waf build
+	./waf build || die "build failed"
 	#waf-utils_src_install --skip-tests --no-system-hooks
 }
 
