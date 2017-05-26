@@ -2,12 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+EAPI="5"
 
-inherit distutils git-2
+PYTHON_COMPAT=( python{3_4,3_5,3_6} )
+
+inherit distutils-r1 git-2
 
 DESCRIPTION="Generates C++ man pages from cplusplus.com"
 HOMEPAGE="https://github.com/Aitjcize/cppman/"
@@ -23,12 +22,10 @@ DEPEND="dev-python/setuptools"
 RDEPEND="dev-python/sqlite3dbm
          sys-apps/groff"
 
-PYTHON_MODNAME="cppman"
-
 src_compile () {
-	distutils_src_compile || die "compile failed"
+	distutils-r1_src_compile || die "compile failed"
 }
 
 src_install () {
-	distutils_src_install || die "install failed"
+	distutils-r1_src_install || die "install failed"
 }
