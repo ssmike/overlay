@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit git-r3 autotools
+inherit git-r3 autotools multilib
 
 DESCRIPTION="Vowpal Wabbit is a machine learning system which pushes the frontier of machine learning with techniques such as online, hashing, allreduce, reductions, learning2search, active, and interactive learning."
 HOMEPAGE="http://hunch.net/~vw/"
@@ -25,7 +25,7 @@ src_prepare() {
 }
 
 src_configure() {
-	./configure --prefix=/usr || die "configure failed"
+	./configure --prefix=/usr --libdir=/usr/$(get_libdir) || die "configure failed"
 }
 
 src_compile() {
