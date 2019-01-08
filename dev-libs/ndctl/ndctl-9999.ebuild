@@ -27,6 +27,8 @@ DEPEND="
 	virtual/libudev
 "
 
+KEYWORDS="~amd64"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {
