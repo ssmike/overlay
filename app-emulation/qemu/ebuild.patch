@@ -1,0 +1,8 @@
+38c38
+< 	+vhost-net virgl virtfs +vnc vte xattr xen xfs pmem"
+---
+> 	+vhost-net virgl virtfs +vnc vte xattr xen xfs"
+124d123
+< 	pmem? ( dev-libs/pmdk )
+473d471
+< 		$(conf_notuser pmem libpmem )
