@@ -16,12 +16,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="
-	sys-devel/autoconf
-	sys-devel/automake
+RDEPEND="
 	dev-libs/glib:2
 	media-gfx/graphviz
-	virtual/pkgconfig
 	sys-libs/ncurses
 	sys-devel/gcc
 	dev-libs/ndctl
@@ -31,7 +28,12 @@ DEPEND="
 
 KEYWORDS="~amd64"
 
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	sys-devel/autoconf
+	sys-devel/automake
+	virtual/pkgconfig
+	dev-ruby/asciidoctor
+"
 
 src_prepare() {
 	eapply_user
