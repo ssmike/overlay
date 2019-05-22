@@ -15,12 +15,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="
-	sys-devel/autoconf
-	sys-devel/automake
+RDEPEND="
 	dev-libs/glib:2
 	media-gfx/graphviz
-	virtual/pkgconfig
 	sys-libs/ncurses
 	sys-devel/gcc
 	dev-libs/json-c
@@ -29,7 +26,12 @@ DEPEND="
 
 KEYWORDS="~amd64"
 
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	sys-devel/autoconf
+	sys-devel/automake
+	virtual/pkgconfig
+	dev-ruby/asciidoctor
+"
 
 src_prepare() {
 	./autogen.sh || die "autogen failed"
