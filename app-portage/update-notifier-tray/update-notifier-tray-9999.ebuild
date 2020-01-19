@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
-	dev-python/notify-python
+	dev-python/pygobject:3
 	dev-python/PyQt5
 	sys-apps/lsb-release
 	sys-apps/portage
