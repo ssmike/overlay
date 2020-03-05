@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="android udev rules"
 HOMEPAGE="https://aur.archlinux.org/packages/android-udev/"
