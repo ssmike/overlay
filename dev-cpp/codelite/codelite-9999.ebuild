@@ -4,12 +4,12 @@
 
 EAPI=5
 
-inherit cmake-utils git-2
+inherit cmake-utils git-r3
 
 DESCRIPTION="Open-source, cross platform IDE for the C/C++ programming languages"
 HOMEPAGE="http://www.codelite.org/"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/eranif/codelite"
+EGIT_REPO_URI="https://github.com/eranif/codelite"
 
 LICENSE="GPL"
 SLOT="0"
@@ -22,7 +22,7 @@ LIBS=">=x11-libs/wxGTK-3.0
 	  net-libs/webkit-gtk
 	  >=x11-libs/wxGTK-3.0"
 
-DEPEND="${LIBS}		
+DEPEND="${LIBS}
 		dev-util/pkgconfig"
 RDEPEND="${LIBS}"
 
