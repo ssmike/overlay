@@ -40,9 +40,9 @@ src_prepare() {
 }
 
 src_compile() {
-	emake
+	emake DOC=n
 }
 
 src_install() {
-	emake DESTDIR="${D}" install prefix=/usr
+	emake DOC=n DESTDIR="${D}" install prefix=/usr
 }

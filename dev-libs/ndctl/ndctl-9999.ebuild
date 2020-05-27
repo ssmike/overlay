@@ -40,7 +40,7 @@ src_prepare() {
 }
 
 src_configure() {
-	./configure --prefix=/usr --libdir=/usr/$(get_libdir) --without-bash || die "configure failed"
+	./configure --prefix=/usr --libdir=/usr/$(get_libdir) --without-bash --disable-docs || die "configure failed"
 }
 
 src_compile() {
