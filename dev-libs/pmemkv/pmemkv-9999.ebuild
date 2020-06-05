@@ -14,6 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=dev-libs/pmdk-1.4 dev-cpp/tbb"
+DEPEND=">=dev-libs/pmdk-1.4 dev-cpp/tbb dev-libs/rapidjson"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-util/cmake-3.3"
