@@ -17,3 +17,13 @@ IUSE=""
 DEPEND=">=dev-libs/pmdk-1.4"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-util/cmake-3.3"
+
+src_configure() {
+	local mycmakeargs=(
+		-DBUILD_TYPE=Release
+		-DBUILD_TESTS=OFF
+		-DTESTS_USE_VALGRIND=OFF
+	)
+
+	cmake-utils_src_configure
+}
