@@ -30,7 +30,6 @@ DEPEND="${RDEPEND}
 	sys-devel/autoconf
 	sys-devel/automake
 	virtual/pkgconfig
-	dev-ruby/asciidoctor
 "
 
 src_prepare() {
