@@ -7,7 +7,7 @@ inherit cmake-utils git-r3
 
 DESCRIPTION="Key/Value Datastore for Persistent Memory"
 HOMEPAGE="https://github.com/pmem/pmemkv"
-EGIT_REPO_URI="git://github.com/pmem/pmemkv"
+EGIT_REPO_URI="https://github.com/pmem/pmemkv"
 
 LICENSE="BSD"
 SLOT="0"

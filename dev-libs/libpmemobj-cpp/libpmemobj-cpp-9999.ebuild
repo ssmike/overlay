@@ -7,7 +7,7 @@ inherit cmake-utils git-r3
 
 DESCRIPTION="C++ bindings for libpmemobj"
 HOMEPAGE="https://github.com/pmem/libpmemobj-cpp"
-EGIT_REPO_URI="git://github.com/pmem/libpmemobj-cpp"
+EGIT_REPO_URI="https://github.com/pmem/libpmemobj-cpp"
 
 LICENSE="BSD"
 SLOT="0"
