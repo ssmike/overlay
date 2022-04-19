@@ -9,7 +9,7 @@ inherit git-r3
 DESCRIPTION="android udev rules"
 HOMEPAGE="https://aur.archlinux.org/packages/android-udev/"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/M0Rf30/android-udev-rules.git"
+EGIT_REPO_URI="https://github.com/M0Rf30/android-udev-rules"
 
 LICENSE="GPL"
 SLOT="0"

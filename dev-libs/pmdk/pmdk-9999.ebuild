@@ -21,7 +21,7 @@ RDEPEND="
 	media-gfx/graphviz
 	sys-libs/ncurses
 	sys-devel/gcc
-	dev-libs/ndctl
+	sys-block/ndctl
 	dev-libs/json-c
 	virtual/libudev
 "
