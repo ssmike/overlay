@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=8
 
-inherit cmake-utils flag-o-matic versionator
+inherit cmake flag-o-matic
 
-PB=$(get_version_component_range -2)
+PB=$(ver_cut 1-2)
 
 DESCRIPTION="A graphical grub2 settings manager"
 HOMEPAGE="https://launchpad.net/grub-customizer"
@@ -32,11 +32,11 @@ src_configure() {
 	append-cxxflags -I$glib_path -std=c++11
 	append-cflags -I$glib_path
 	#append-cppflags -I$glib_path -std=c++11
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	insinto /etc/grub-customizer
 	newins "${FILESDIR}/grub.cfg" grub.cfg
 }

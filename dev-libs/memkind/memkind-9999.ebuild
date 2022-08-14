@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND="
 	sys-process/numactl
-	dev-libs/ndctl
+	sys-block/ndctl
 	sys-devel/gcc
 "
 

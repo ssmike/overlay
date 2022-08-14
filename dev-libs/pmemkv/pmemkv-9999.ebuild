@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Key/Value Datastore for Persistent Memory"
 HOMEPAGE="https://github.com/pmem/pmemkv"
@@ -24,5 +24,5 @@ src_configure() {
 		-DBUILD_TESTS=OFF
 		-DTESTS_USE_VALGRIND=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit cmake-utils git-r3 multilib
+inherit cmake git-r3 multilib
 
 DESCRIPTION="Standard Template Library for Extra Large Data Sets"
 HOMEPAGE="http://stxxl.org/"
@@ -22,5 +22,5 @@ src_configure() {
 		-DINSTALL_LIB_DIR=$(get_libdir)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

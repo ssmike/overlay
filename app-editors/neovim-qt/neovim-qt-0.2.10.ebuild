@@ -1,8 +1,8 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-inherit cmake-utils git-r3
+EAPI=8
+inherit cmake git-r3
 
 DESCRIPTION="Qt GUI/RPC for Neovim"
 HOMEPAGE="https://github.com/equalsraf/neovim-qt"

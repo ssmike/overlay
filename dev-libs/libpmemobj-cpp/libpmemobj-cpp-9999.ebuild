@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="C++ bindings for libpmemobj"
 HOMEPAGE="https://github.com/pmem/libpmemobj-cpp"
@@ -25,5 +25,5 @@ src_configure() {
 		-DTESTS_USE_VALGRIND=OFF
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
