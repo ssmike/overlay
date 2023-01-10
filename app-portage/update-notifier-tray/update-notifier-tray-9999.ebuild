@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
 PYTHON_COMPAT=( python3_5 python3_{6,7,8,9,10} )
-inherit distutils-r1 git-r3
+inherit distutils-r1 git-r3 desktop
 
 DESCRIPTION="update-notifier like tray icon for portage"
 HOMEPAGE="https://github.com/ssmike/update-notifier-tray"
