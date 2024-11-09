@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python3_5 python3_{6,7,8,9,10,11} )
+PYTHON_COMPAT=( python3_5 python3_{6,7,8,9,10,11,12,13} )
 inherit distutils-r1 git-r3 desktop
 
 DESCRIPTION="update-notifier like tray icon for portage"
