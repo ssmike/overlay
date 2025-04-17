@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND="
 	dev-python/pygobject:3
-	dev-python/PyQt5
+	dev-python/pyqt5
 	sys-apps/lsb-release
 	sys-apps/portage
 	virtual/notification-daemon
