@@ -2,16 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="7"
+EAPI="8"
 
 PYTHON_COMPAT=( python{3_12,3_13} )
 
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 git-r3
 
 DESCRIPTION="Generates C++ man pages from cplusplus.com"
 HOMEPAGE="https://github.com/Aitjcize/cppman/"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/aitjcize/cppman.git"
+EGIT_REPO_URI="https://github.com/Aitjcize/cppman.git"
 
 LICENSE="GPL-3"
 SLOT="0"
